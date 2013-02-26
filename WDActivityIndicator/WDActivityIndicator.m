@@ -60,9 +60,12 @@
 #pragma mark - Private Methods
 
 - (void)setupView {
-	// Default Value is to start animated and do not hide
+	// Default Value is to start animated and to hide when stopped
 	self.animating = YES;
-	self.hidesWhenStopped = NO;
+	self.hidesWhenStopped = YES;
+	
+	// Configure the parent view
+	[self setBackgroundColor:[UIColor clearColor]];
 	
 	UIImage *initialImage = [UIImage imageNamed:@"WDActivityIndicator.bundle/activity_image"];
 	self.activityImageView = [[UIImageView alloc] initWithImage:initialImage];

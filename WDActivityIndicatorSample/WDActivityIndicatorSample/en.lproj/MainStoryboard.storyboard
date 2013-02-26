@@ -54,7 +54,7 @@
                                     <action selector="stopButtonPressed:" destination="2" eventType="touchUpInside" id="HJj-Pp-2Mr"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="JAH-fW-tnR">
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="JAH-fW-tnR">
                                 <rect key="frame" x="122" y="337" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="kU7-nt-W2G" id="Lbd-s4-g3F"/>
@@ -81,22 +81,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startButtonPressed:"/>
-                <relationship kind="action" name="stopButtonPressed:"/>
-                <relationship kind="action" name="toggleButtonChanged:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="WDActivityIndicator"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WDActivityIndicator" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WDActivityIndicator.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
