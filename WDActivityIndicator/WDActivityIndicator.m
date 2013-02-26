@@ -10,6 +10,7 @@
 
 @interface WDActivityIndicator ()
 
+@property (nonatomic) BOOL animating;
 @property (nonatomic) CGFloat angle;
 @property (strong, nonatomic) UIImageView *activityImageView;
 
@@ -40,7 +41,29 @@
 	return self;
 }
 
+- (void)startAnimating {
+	self.animating = YES;
+	self.hidden = NO;
+}
+
+- (void)stopAnimating {
+	self.animating = NO;
+	
+	self.hidden = self.hidesWhenStopped;
+	
+	// reset to default position
+	self.angle = 0.0f;
+	CGAffineTransform transform = CGAffineTransformMakeRotation(0.0f);
+	self.activityImageView.transform = transform;
+}
+
+#pragma mark - Private Methods
+
 - (void)setupView {
+	// Default Value is to start animated and do not hide
+	self.animating = YES;
+	self.hidesWhenStopped = NO;
+	
 	UIImage *initialImage = [UIImage imageNamed:@"WDActivityIndicator.bundle/activity_image"];
 	self.activityImageView = [[UIImageView alloc] initWithImage:initialImage];
 	
@@ -59,7 +82,8 @@
 }
 
 - (void)handleTimer:(NSTimer *)timer {
-	self.angle += 0.13f;
+	if (self.animating)
+		self.angle += 0.13f;
 	
 	if (self.angle > 6.283)
 		self.angle = 0.0f;

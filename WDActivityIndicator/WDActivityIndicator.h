@@ -10,4 +10,9 @@
 
 @interface WDActivityIndicator : UIView
 
+@property (nonatomic) BOOL hidesWhenStopped;
+
+- (void)startAnimating;
+- (void)stopAnimating;
+
 @end
