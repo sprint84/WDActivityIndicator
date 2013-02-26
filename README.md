@@ -3,7 +3,7 @@ WDActivityIndicator
 
 Custom Activity Indicator View with a simple image animation.
 
-![Screenshot] (https://github.com/sprint84/WDUploadProgressView/blob/master/WDUploadProgressViewSample/Screenshot1.png?raw=true)
+![Screenshot] (https://github.com/sprint84/WDActivityIndicator/blob/master/WDActivityIndicatorSample/WDActivityIndicatorSample/screenshot1.png?raw=true)
 
 ## Usage
 * Copy the project files and include into your project. Attention to the add the bundle images.
