@@ -57,18 +57,73 @@
 	self.activityImageView.transform = transform;
 }
 
+- (void)setIndicatorStyle:(WDActivityIndicatorStyle)indicatorStyle {
+	_indicatorStyle = indicatorStyle;
+	
+	NSMutableString *imageName = [NSMutableString stringWithString:@"WDActivityIndicator.bundle/"];
+	
+	switch (indicatorStyle) {
+		case WDActivityIndicatorStyleGradient:
+			[imageName appendString:@"activity_gradient"];
+			break;
+		
+		case WDActivityIndicatorStyleSegment:
+			[imageName appendString:@"activity_segment"];
+			break;
+			
+		case WDActivityIndicatorStyleSegmentLarge:
+			[imageName appendString:@"activity_segment_full"];
+			break;
+		
+		default:
+			break;
+	}
+	
+	// Set the style conforming native UIActivityIndicatorView constants.
+	switch (self.nativeIndicatorStyle) {
+		case UIActivityIndicatorViewStyleGray:
+			[imageName appendString:@"_gray"];
+			break;
+			
+		case UIActivityIndicatorViewStyleWhite:
+			[imageName appendString:@"_white"];
+			break;
+			
+		case UIActivityIndicatorViewStyleWhiteLarge:
+			[imageName appendString:@"_white_large"];
+			break;
+			
+		default:
+			break;
+	}
+	
+	UIImage *indicatorImage = [UIImage imageNamed:imageName];
+	
+	if (!self.activityImageView) {
+		self.activityImageView = [[UIImageView alloc] initWithImage:indicatorImage];
+	}
+	
+	[self.activityImageView setImage:indicatorImage];
+}
+
+- (void)setNativeIndicatorStyle:(UIActivityIndicatorViewStyle)nativeIndicatorStyle {
+	_nativeIndicatorStyle = nativeIndicatorStyle;
+	
+	[self setIndicatorStyle:self.indicatorStyle];
+}
+
 #pragma mark - Private Methods
 
 - (void)setupView {
 	// Default Value is to start animated and to hide when stopped
 	self.animating = YES;
 	self.hidesWhenStopped = YES;
+	self.nativeIndicatorStyle = UIActivityIndicatorViewStyleGray;
 	
 	// Configure the parent view
 	[self setBackgroundColor:[UIColor clearColor]];
 	
-	UIImage *initialImage = [UIImage imageNamed:@"WDActivityIndicator.bundle/activity_image"];
-	self.activityImageView = [[UIImageView alloc] initWithImage:initialImage];
+	[self setIndicatorStyle:WDActivityIndicatorStyleGradient];
 	
 	NSTimer *timer;
 	self.angle = 0.0f;

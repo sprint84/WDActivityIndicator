@@ -26,6 +26,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)segmentedControlChanged:(id)sender {
+	UISegmentedControl *control = sender;
+	
+	switch ([control selectedSegmentIndex]) {
+		case 0:
+			[self.activityIndicator setIndicatorStyle:WDActivityIndicatorStyleGradient];
+			break;
+		
+		case 1:
+			[self.activityIndicator setIndicatorStyle:WDActivityIndicatorStyleSegment];
+			break;
+		
+		case 2:
+			[self.activityIndicator setIndicatorStyle:WDActivityIndicatorStyleSegmentLarge];
+			break;
+			
+		default:
+			break;
+	}
+}
+
 - (IBAction)startButtonPressed:(id)sender {
 	[self.activityIndicator startAnimating];
 	self.startButton.enabled = NO;

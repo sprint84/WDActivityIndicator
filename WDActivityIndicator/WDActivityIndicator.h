@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+	WDActivityIndicatorStyleGradient,
+	WDActivityIndicatorStyleSegment,
+	WDActivityIndicatorStyleSegmentLarge
+} WDActivityIndicatorStyle;
+
 @interface WDActivityIndicator : UIView
 
 @property (nonatomic) BOOL hidesWhenStopped;
+@property (nonatomic) WDActivityIndicatorStyle indicatorStyle;
+@property (nonatomic) UIActivityIndicatorViewStyle nativeIndicatorStyle;
 
 - (void)startAnimating;
 - (void)stopAnimating;
