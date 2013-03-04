@@ -90,7 +90,8 @@
 			break;
 			
 		case UIActivityIndicatorViewStyleWhiteLarge:
-			[imageName appendString:@"_white_large"];
+			// TODO: Create large white images
+			[imageName appendString:@"_white"];
 			break;
 			
 		default:

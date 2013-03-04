@@ -13,12 +13,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="kU7-nt-W2G" customClass="WDActivityIndicator">
-                                <rect key="frame" x="150" y="161" width="20" height="20"/>
+                                <rect key="frame" x="150" y="210" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TCG-Fo-TAA">
-                                <rect key="frame" x="52" y="237" width="80" height="44"/>
+                                <rect key="frame" x="52" y="286" width="80" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start">
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ufk-vs-pmf">
-                                <rect key="frame" x="188" y="237" width="80" height="44"/>
+                                <rect key="frame" x="188" y="286" width="80" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop">
@@ -48,14 +48,14 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="JAH-fW-tnR">
-                                <rect key="frame" x="122" y="337" width="79" height="27"/>
+                                <rect key="frame" x="122" y="386" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleButtonChanged:" destination="2" eventType="valueChanged" id="Yka-98-RHm"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hides when stopped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rwX-IF-n5a">
-                                <rect key="frame" x="83" y="312" width="155" height="21"/>
+                                <rect key="frame" x="83" y="361" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,6 +80,24 @@
                                     <action selector="segmentedControlChanged:" destination="2" eventType="valueChanged" id="oda-Qx-xW8"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ycq-2M-rDa">
+                                <rect key="frame" x="80" y="164" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Gray"/>
+                                    <segment title="White"/>
+                                </segments>
+                                <connections>
+                                    <action selector="nativeStyleSegmentedControlChanged:" destination="2" eventType="valueChanged" id="AZ0-bQ-eQl"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="UIActivityIndicatorView Styles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sMW-fg-xb1">
+                                <rect key="frame" x="20" y="142" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -97,6 +115,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="nativeStyleSegmentedControlChanged:"/>
                 <relationship kind="action" name="segmentedControlChanged:"/>
                 <relationship kind="action" name="startButtonPressed:"/>
                 <relationship kind="action" name="stopButtonPressed:"/>

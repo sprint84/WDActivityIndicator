@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
 - (IBAction)segmentedControlChanged:(id)sender;
+- (IBAction)nativeStyleSegmentedControlChanged:(id)sender;
 - (IBAction)startButtonPressed:(id)sender;
 - (IBAction)stopButtonPressed:(id)sender;
 - (IBAction)toggleButtonChanged:(id)sender;
