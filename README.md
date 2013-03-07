@@ -32,7 +32,7 @@ self.activityIndicator.hidesWhenStopped = YES;
 
 ## Requirements
 * WDActivityIndicator requires iOS 5.0 or above.
-* ARC memory management. If your project does not use ARC, compile with flag -fobjc-arc.
+* ARC memory management. If your project does not use ARC, compile project files with flag -fobjc-arc.
 
 ## License
 WDActivityIndicator is available under the MIT license.
