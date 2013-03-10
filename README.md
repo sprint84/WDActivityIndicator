@@ -1,7 +1,7 @@
 WDActivityIndicator
 ===================
 
-Custom Activity Indicator View with a simple image animation.
+Custom Activity Indicator View with a simple image animation that supports native UIActivityIndicator and custom styles.
 
 ![Screenshot] (https://github.com/sprint84/WDActivityIndicator/blob/master/WDActivityIndicatorSample/WDActivityIndicatorSample/screenshot1.png?raw=true)
 
