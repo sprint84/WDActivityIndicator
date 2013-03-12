@@ -7,6 +7,8 @@ Custom Activity Indicator View with a simple image animation that supports nativ
 
 ## Usage
 * Copy the project files and include into your project. Attention to the add the bundle images.
+* You can select between 3 styles: `WDActivityIndicatorStyleGradient`, `WDActivityIndicatorStyleSegment` and `WDActivityIndicatorStyleSegmentLarge`
+* In addition, it responds to native `UIActivityIndicator` styles: `UIActivitiyIndicatorViewStyleGray` and `UIActivitiyIndicatorViewStyleWhite`. `UIActivitiyIndicatorViewStyleWhiteLarge` coming soon!
 
 ### Initialization
 
