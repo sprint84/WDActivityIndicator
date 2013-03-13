@@ -1,12 +1,14 @@
 WDActivityIndicator
 ===================
 
-Custom Activity Indicator View with a simple image animation.
+Custom Activity Indicator View with a simple image animation that supports native UIActivityIndicator and custom styles.
 
 ![Screenshot] (https://github.com/sprint84/WDActivityIndicator/blob/master/WDActivityIndicatorSample/WDActivityIndicatorSample/screenshot1.png?raw=true)
 
 ## Usage
 * Copy the project files and include into your project. Attention to the add the bundle images.
+* You can select between 3 styles: `WDActivityIndicatorStyleGradient`, `WDActivityIndicatorStyleSegment` and `WDActivityIndicatorStyleSegmentLarge`
+* In addition, it responds to native `UIActivityIndicator` styles: `UIActivitiyIndicatorViewStyleGray` and `UIActivitiyIndicatorViewStyleWhite`. `UIActivitiyIndicatorViewStyleWhiteLarge` coming soon!
 
 ### Initialization
 
@@ -32,7 +34,7 @@ self.activityIndicator.hidesWhenStopped = YES;
 
 ## Requirements
 * WDActivityIndicator requires iOS 5.0 or above.
-* ARC memory management. If your project does not use ARC, compile with flag -fobjc-arc.
+* ARC memory management. If your project does not use ARC, compile project files with flag -fobjc-arc.
 
 ## License
 WDActivityIndicator is available under the MIT license.
