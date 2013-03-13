@@ -126,17 +126,11 @@
 	
 	[self setIndicatorStyle:WDActivityIndicatorStyleGradient];
 	
-	NSTimer *timer;
 	self.angle = 0.0f;
 	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDuration:0.8];
-	
-	timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
-	
-	[UIView commitAnimations];
-	
+	NSTimer *timer = [NSTimer timerWithTimeInterval:0.02 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
+	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+		
 	[self addSubview:self.activityImageView];
 }
 
